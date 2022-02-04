@@ -3,7 +3,6 @@ package com.learning.webfluxbasics;
 import com.learning.webfluxbasics.dto.Response;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Mono;
@@ -25,4 +24,5 @@ public class Les05BadRequestTest extends BaseTest{
         StepVerifier.create(responseMono)
                 .verifyError(WebClientResponseException.BadRequest.class);
     }
+
 }
