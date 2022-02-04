@@ -20,7 +20,8 @@ public class Les04PostSetHeader extends BaseTest{
                 .uri("reactive-math/multiply")
                 .bodyValue(buildObj(5,5))
                // .header("Auth","Admin")
-                .headers(httpHeaders -> httpHeaders.set("Authorization","Admin"))
+                .headers(httpHeaders -> httpHeaders.set("key-String","value-String"))
+                .headers(httpHeaders -> httpHeaders.setBearerAuth("Complex jwt token"))
                 .retrieve()
                 .bodyToMono(Response.class)
                 .doOnNext(System.out::println);
